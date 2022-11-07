@@ -15,13 +15,27 @@ class Dog:
     def toggle_allowed(cls):
         cls.allowed_outside = not cls.allowed_outside
 
+##          DELETE ALL OF THIS VVV 
+##
+dog_1 = Dog(2, 40)
+dog_1.age_dog()
+print(f"age = {dog_1.age}, {dog_1.weight}")
+Dog.toggle_allowed()
+print(dog_1.allowed_outside)
+Dog.toggle_allowed()
+print(dog_1.allowed_outside)
+
+##
+##         ADD EVERYTHING BELOW THIS LINE
+##  __________________________________________
+
 # ------ INHERITANCE  (is-a relationship)
 class SmallDog(Dog):
 
     def __init__(self, age, weight, is_yappy):
         super().__init__(age, weight)
         self.is_yappy = is_yappy
-        self.check_weight() #run on instantiation
+        self.check_weight() #run on instantiation - new thing?
     
     def check_weight(self):
         if self.weight > 10:

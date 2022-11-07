@@ -6,6 +6,7 @@ class Dog:
         self.age = age
         self.weight = weight
         self.is_old = False
+### add this after bottom VVVV
         self.medication = None
 
     def age_dog(self):#instance method
@@ -16,6 +17,7 @@ class Dog:
     def toggle_allowed(cls):
         cls.allowed_outside = not cls.allowed_outside
 
+# ------ INHERITANCE  (is-a relationship)
 class SmallDog(Dog):
 
     def __init__(self, age, weight, is_yappy):
@@ -26,6 +28,10 @@ class SmallDog(Dog):
     def check_weight(self):
         if self.weight > 10:
             print("This is not a small dog!")
+##          DELETE ALL THIS VVV
+#dog_2 = SmallDog(5, 22, False)
+#dog_3 = SmallDog(5, 8, False)
+##          DELETE ALL THIS ^^^
 
 class LargeDog(Dog):
 
@@ -37,11 +43,19 @@ class LargeDog(Dog):
         self.age += 1
         if self.age > 5:
 # Lets update 'is_old' to do something
-            #self.is_old = True
-            self.medication=(Meds(1, 'hip medication'))
+            self.medication=(Medication(1, 'hip medication'))
+
+##          DELETE ALL THIS VVV
+#dog_4 = LargeDog(5, 50, True)
+#print(f"LargeDog is {dog_4.age}. Is it old? {dog_4.is_old}")
+#dog_4.age_dog()
+#print(f"LargeDog is {dog_4.age}. Is it old? {dog_4.is_old}")
+##          DELETE ALL THIS ^^^
+
+####        ----- ADD ALL THIS VVVVVVV ------
 
 # ---- Composition (has-a relationship)
-class Meds:
+class Medication:
 
     def __init__(self, number, med_type):
         self.number = number

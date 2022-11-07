@@ -11,7 +11,7 @@ class Dog:
     def age_dog(self):#instance method
         self.age +=1
         return self.age
-    
+####   ----- ADD THIS METHOD  ----- 
     def show_meds(self):
         print(self.medication)
 
@@ -55,7 +55,15 @@ class Meds:
             Number of meds: {self.number}
             Type of meds: {self.med_type}
             """
+
+###     DELETE ALL THIS VVVV
+dog_5 = LargeDog(5, 50, True)
+print(f"LargeDog is old? {dog_5.is_old} Meds = {dog_5.medication} ")
+dog_5.age_dog()
+print(f"LargeDog is old? {dog_5.is_old} Meds = {dog_5.medication.number} {dog_5.medication.med_type} ")
+
+###     DELETE ALL THIS ^^^^
+### THEN ADD THIS dog_5 = LargeDog(5, 50, True)
 dog_5 = LargeDog(5, 50, True)
 dog_5.age_dog()
 print(dog_5.medication)
-
